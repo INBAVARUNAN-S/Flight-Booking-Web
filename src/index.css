@@ -8,55 +8,60 @@
   background-color: #f6faff;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility; 
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --sidebar-active: #4690f6;
-  --main-bg-color:  #ecf3fe;
+  --main-bg-color: #ecf3fe;
+  --card-design-border: 0px;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh ;
+  height: 100vh;
 }
 
-.sidebar{
+.sidebar {
   width: 200px;
   height: 100vh;
   font-size: 18px;
-  margin: 0 10px; 
-}  
+  margin: 0 10px;
+}
 
-.sidebar-links ul{
+.sidebar-links ul {
   list-style: none;
   padding: 0;
   text-align: center;
 }
 
-.sidebar-links ul li{
+.sidebar-links ul li {
   margin: 15px 0px;
   padding: 8px 0px;
 }
 
-.sidebar-links ul li.active{
+.sidebar-links ul li.active {
   background-color: var(--sidebar-active);
-  border-radius: 10px; 
+  border-radius: 10px;
   color: #fff;
 }
 
-.sidebar-links ul li.active a{
+.sidebar-links ul li.active a {
   color: #fff;
 }
 
-.sidebar-links ul li a{
+.sidebar-links ul li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
-.main-container{
+.main-container {
   background-color: var(--main-bg-color);
   width: 100%;
   padding: 15px;
+}
+
+.card-design {
+  border: var(--card-design-border) !important;
 }

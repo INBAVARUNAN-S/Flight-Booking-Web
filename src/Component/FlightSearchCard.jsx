@@ -5,16 +5,13 @@ const FlightSearchCard = () => {
 
 
     return (
-        <div className='row'>
-            <div className=''>
-
-            </div>    
-            <Card>
+        <div>
+            <Card className='card-design'>
                 <Card.Body>
                     <div className="row">
-                        <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12'>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                        <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12 fs-6'>
+                            <Card.Title className=''>Book a Flight</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">Where would you want to go ?</Card.Subtitle>
                             <Card.Text>
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
