@@ -8,7 +8,7 @@ const FlightSearchCard = () => {
 
     return (
         <div>
-            <Card className='card-design'>
+            <Card className='card-design my-3'>
                 <Card.Body>
                     <div className="row">
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12 fs-6'>

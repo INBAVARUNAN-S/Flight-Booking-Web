@@ -69,6 +69,7 @@ body {
 .card-design {
   border: var(--card-design-border) !important;
   background-color: var(--card-design-background) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); 
 }
 
 .flight-img {
@@ -91,4 +92,9 @@ body {
 
 .form-control:focus {
   box-shadow: none !important;
+}
+
+.form-label{
+  font-size: 13px !important;
+  font-weight: 500 !important;
 }
