@@ -24,8 +24,6 @@ const FlightDetailCard = () => {
                             <h5 className='mb-1'>INR 1000</h5>
                             <p className='mb-1 text-secondary fs-6'>Price</p>
                         </div> 
-
-
                     </div>
                 </Card.Body>
             </Card>

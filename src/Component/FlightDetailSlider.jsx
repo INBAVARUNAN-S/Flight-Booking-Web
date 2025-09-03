@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import FlightDetailCard from './FlightDetailCard';
 
+
 const FlightDetailSlider = () => {
     const settings = {
         dots: true,
