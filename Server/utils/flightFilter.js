@@ -18,7 +18,7 @@ function filterFlights(query) {
       return false;
 
     if (query.min_price && flight.price.amount < query.min_price)
-      return false;
+      return false; 
 
     if (query.max_price && flight.price.amount > query.max_price)
       return false;

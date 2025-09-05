@@ -12,10 +12,9 @@ const Main = () => {
   }
 
 
-
   return (
     <div className='row'>
-      <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'>
+      <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'> 
 
         <FlightSearchCard getData={getApiData} />
         <div className='my-3'>
