@@ -18,7 +18,7 @@ const FlightDetailCard = () => {
                             <div>
                                 <h5 className='mb-1'>Garuda INA</h5>
                                 <p className='mb-1 text-success'>AMS . SIN . CGK</p>
-                            </div>
+                            </div> 
                         </div>
                         <div className='text-end'>
                             <h5 className='mb-1'>INR 1000</h5>

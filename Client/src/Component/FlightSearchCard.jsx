@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { GiConsoleController } from 'react-icons/gi';
 
-const FlightSearchCard = () => {
+const FlightSearchCard = ({ getData }) => {
+
+    const [userData, setUserData] = useState({
+        from: '',
+        to: '',   
+        date: ''
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        console.log(name, value);
+
+        setUserData({
+            ...userData,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        getData(userData.from, userData.to, userData.date);
+    }
 
 
     return (
@@ -17,25 +39,25 @@ const FlightSearchCard = () => {
                             <img src={"https://5.imimg.com/data5/CA/HH/FC/SELLER-102861858/flight-booking-500x500.jpg"} className='flight-img' alt="" />
                         </div>
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12'>
-                            <Form>
+                            <Form onSubmit={(e) => handleSubmit(e)}>
                                 <Form.Group className="mb-2" controlId="formBasicEmail">
                                     <Form.Label>From</Form.Label>
-                                    <Form.Control type="text" placeholder="Coimbatore" />
+                                    <Form.Control type="text" placeholder="Coimbatore" onChange={handleChange} value={userData.from} name='from' />
                                 </Form.Group>
 
                                 <Form.Group className="mb-2" controlId="formBasicPassword">
                                     <Form.Label>To</Form.Label>
-                                    <Form.Control type="text" placeholder="Delhi" />
+                                    <Form.Control type="text" placeholder="Delhi" onChange={handleChange} value={userData.to} name='to' />
                                 </Form.Group>
 
                                 <Form.Group className="mb-2" controlId="formBasicPassword">
                                     <Form.Label>Date</Form.Label>
-                                    <Form.Control type="date" />
-                                </Form.Group> 
+                                    <Form.Control type="date" onChange={handleChange} value={userData.date} name='date' />
+                                </Form.Group>
 
                                 <Button variant="success" className='w-100 btn-color my-4 py-3' type="submit">
                                     Search
-                                </Button>  
+                                </Button>
                             </Form>
                         </div>
                     </div>
@@ -46,4 +68,4 @@ const FlightSearchCard = () => {
     )
 }
 
-export default FlightSearchCard
+export default FlightSearchCard;

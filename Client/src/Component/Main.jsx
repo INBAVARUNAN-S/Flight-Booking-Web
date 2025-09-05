@@ -2,12 +2,22 @@ import React from 'react'
 import FlightSearchCard from './FlightSearchCard'
 import FlightDetailCard from './FlightDetailCard'
 import FlightDetailSlider from './FlightDetailSlider'
+import axios from 'axios'
 
 const Main = () => {
+
+  const getApiData = async (from,to,date) => {
+    const response = await axios(`http://localhost:3000/api/flights?from=${from}&to=${to}&date=${date}`);
+    console.log(response.data);         
+  }
+
+
+
   return (
     <div className='row'>
       <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'>
-        <FlightSearchCard />
+
+        <FlightSearchCard getData={getApiData} />
         <div className='my-3'>
           <div className='d-flex align-items-center justify-content-between gap-3'>
             <div>
@@ -28,7 +38,7 @@ const Main = () => {
         <div>
 
           <FlightDetailSlider />
-        </div>
+        </div> 
       </div>
 
     </div>
