@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FlightSearchCard from './FlightSearchCard'
 import FlightDetailCard from './FlightDetailCard'
 import FlightDetailSlider from './FlightDetailSlider'
@@ -6,15 +6,24 @@ import axios from 'axios'
 
 const Main = () => {
 
-  const getApiData = async (from,to,date) => {
+  const [flights, setFlights] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getApiData = async (from, to, date) => {
     const response = await axios(`http://localhost:3000/api/flights?from=${from}&to=${to}&date=${date}`);
-    console.log(response.data);         
+
+    setFlights(response.data);
+    setLoading(false);
   }
+
+  // if (loading) {
+  //   return <h1>Loading...</h1>
+  // }
 
 
   return (
     <div className='row'>
-      <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'> 
+      <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'>
 
         <FlightSearchCard getData={getApiData} />
         <div className='my-3'>
@@ -32,12 +41,19 @@ const Main = () => {
             </div>
           </div>
         </div>
+        {
+          loading ? <h1>Loading...</h1> : flights.map((flight) => {
+            return ( 
+              <FlightDetailCard flight={flight} />
+            )
+          })
+        }
 
 
         <div>
 
           <FlightDetailSlider />
-        </div> 
+        </div>
       </div>
 
     </div>

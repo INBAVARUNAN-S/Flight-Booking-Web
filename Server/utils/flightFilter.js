@@ -8,7 +8,7 @@ function filterFlights(query) {
     if (query.to && flight.arrival.city.toLowerCase() !== query.to.toLowerCase())
       return false;
 
-    if (query.date && flight.departure.date !== query.date)
+    if (query.date && flight.departure.date !== query.date)  
       return false;
 
     if (query.cabin_class && flight.cabin_class.toLowerCase() !== query.cabin_class.toLowerCase())
