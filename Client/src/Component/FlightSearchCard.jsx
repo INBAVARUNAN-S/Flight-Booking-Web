@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { GiConsoleController } from 'react-icons/gi';
+import Lottie from 'react-lottie-player';
+import flightAnimation from "../assets/animation.json";
 
 const FlightSearchCard = ({ getData }) => {
 
     const [userData, setUserData] = useState({
-        from: '',
+        from: '', 
         to: '',   
-        date: ''
+        date: '' 
     })
 
     const handleChange = (e) => {
@@ -19,7 +20,7 @@ const FlightSearchCard = ({ getData }) => {
         setUserData({
             ...userData,
             [name]: value
-        })
+        })  
     }
 
     const handleSubmit = (e) => {
@@ -35,9 +36,8 @@ const FlightSearchCard = ({ getData }) => {
                     <div className="row">
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12 fs-6'>
                             <Card.Subtitle className="mb-2 ">Where would you want to go ?</Card.Subtitle>
-                            {/* <Card.Title className='fs-1'>Book a Flight</Card.Title>    */}
-                            <img src={"https://5.imimg.com/data5/CA/HH/FC/SELLER-102861858/flight-booking-500x500.jpg"} className='flight-img' alt="" />
-                        </div>
+                            {/* <Lottie animationData={flightAnimation} play/>  */}
+                        </div> 
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12'>
                             <Form onSubmit={(e) => handleSubmit(e)}>
                                 <Form.Group className="mb-2" controlId="formBasicEmail">

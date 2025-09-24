@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import FlightDetailCard from './FlightDetailCard';
 
 
-const FlightDetailSlider = () => {
+const FlightDetailSlider = ({children}) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -23,24 +23,7 @@ const FlightDetailSlider = () => {
         <div className='px-2'>
             <div className="slider-container">
                 <Slider {...settings}>
-                    <div>
-                        <FlightDetailCard/>
-                    </div>
-                    <div>
-                        <FlightDetailCard/>
-                    </div>
-                    <div>
-                        <FlightDetailCard/>
-                    </div>
-                    <div>
-                        <FlightDetailCard/>
-                    </div>
-                    <div>
-                        <FlightDetailCard/>
-                    </div>
-                    <div>
-                        <FlightDetailCard/>
-                    </div> 
+                        {children}
                 </Slider>
             </div> 
         </div>

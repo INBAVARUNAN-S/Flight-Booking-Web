@@ -4,7 +4,7 @@ import FlightDetailCard from './FlightDetailCard'
 import FlightDetailSlider from './FlightDetailSlider'
 import axios from 'axios'
 
-const Main = () => {
+const Main = () => { 
 
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,8 +14,8 @@ const Main = () => {
     try{
       const response = await axios(`http://localhost:3000/api/flights?from=${from}&to=${to}&date=${date}`);
   
-      if (response.data || response.data.length > 0) {
-        setFlights(response.data);   
+      if (response.data && response.data.length > 0) {
+        setFlights(response.data); 
         setSingleData(response.data[0]); 
         setLoading(false);
       } else {
@@ -29,16 +29,17 @@ const Main = () => {
     }
   }
 
-  // if (loading) {
-  //   return <h1>Loading...</h1>
-  // }
-
-
   return (
-    <div className='row'>
+    <div className='row'> 
       <div className='col-md-8 col-lg-8 col-xl-8 col-sm-12'>
 
-        <FlightSearchCard getData={getApiData} />
+        <FlightSearchCard getData={getApiData} /> 
+
+        {
+          loading 
+        }
+
+        
         <div className='my-3'>
           {
             loading ? <h1>Loading...</h1> : <>
@@ -53,7 +54,7 @@ const Main = () => {
                 <hr className='flex-fill' style={{ borderStyle: 'dashed' }} /> 
                 <div className='text-end'>
                   <p className='mb-1'>To</p>
-                  <h4 className='mb-1'>{singleData.arrival.city}</h4>
+                  <h4 className='mb-1'>{singleData.arrival.city}</h4> 
                   <p className='mb-1'>{singleData.arrival.airport}</p>
                 </div>
 
@@ -62,19 +63,24 @@ const Main = () => {
           }
         </div>
 
+        {
 
-
-        {/* {
-              loading ? <h1>Loading...</h1> : flights.map((flight) => {
-                return (
-                  <FlightDetailCard flight={flight} />
-                )
-              })
-            } */}
+              loading ? <h1>Loading...</h1> : <>
+                <FlightDetailSlider>
+                  {
+                    flights.map((flight,id) => {
+                      return(
+                        <FlightDetailCard flight={flight} key={id}/>     
+                      ) 
+                    })
+                  }
+                </FlightDetailSlider>
+              </>
+        }
 
         <div>
 
-          <FlightDetailSlider />
+          {/* <FlightDetailSlider /> */}
         </div>
       </div>
 
