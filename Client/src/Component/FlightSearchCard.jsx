@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Lottie from 'react-lottie-player';
-import flightAnimation from "../assets/animation.json";
+import plane_img from './../assets/airplane.png';
 
 const FlightSearchCard = ({ getData }) => {
 
@@ -36,7 +35,7 @@ const FlightSearchCard = ({ getData }) => {
                     <div className="row">
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12 fs-6'>
                             <Card.Subtitle className="mb-2 ">Where would you want to go ?</Card.Subtitle>
-                            {/* <Lottie animationData={flightAnimation} play/>  */}
+                            <img src={plane_img} alt="" />
                         </div> 
                         <div className='col-md-6 col-lg-6 col-xl-6 col-sm-12'>
                             <Form onSubmit={(e) => handleSubmit(e)}>
