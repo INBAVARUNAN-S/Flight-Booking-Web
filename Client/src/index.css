@@ -98,3 +98,11 @@ body {
   font-size: 13px !important;
   font-weight: 500 !important;
 }
+
+.not-found{
+  font-size: 200px;
+  font-weight: 300;
+  margin: 120px 35px;
+  color: #4690f6;
+  font-style: oblique;
+}

@@ -4,29 +4,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import plane_img from './../assets/airplane.png';
 
-const FlightSearchCard = ({ getData }) => {
-
-    const [userData, setUserData] = useState({
-        from: '', 
-        to: '',   
-        date: '' 
-    })
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        console.log(name, value);
-
-        setUserData({
-            ...userData,
-            [name]: value
-        })  
-    }
+const FlightSearchCard = ({ getData,handleChanges,from,to,date }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        getData(userData.from, userData.to, userData.date);
+        getData();
     }
-
 
     return (
         <div>
@@ -41,17 +24,17 @@ const FlightSearchCard = ({ getData }) => {
                             <Form onSubmit={(e) => handleSubmit(e)}>
                                 <Form.Group className="mb-2" controlId="formBasicEmail">
                                     <Form.Label>From</Form.Label>
-                                    <Form.Control type="text" placeholder="Coimbatore" onChange={handleChange} value={userData.from} name='from' />
+                                    <Form.Control type="text" placeholder="Coimbatore" onChange={handleChanges}  name='from' />
                                 </Form.Group>
 
                                 <Form.Group className="mb-2" controlId="formBasicPassword">
                                     <Form.Label>To</Form.Label>
-                                    <Form.Control type="text" placeholder="Delhi" onChange={handleChange} value={userData.to} name='to' />
-                                </Form.Group>
+                                    <Form.Control type="text" placeholder="Delhi" onChange={handleChanges}  name='to' />
+                                </Form.Group> 
 
                                 <Form.Group className="mb-2" controlId="formBasicPassword">
                                     <Form.Label>Date</Form.Label>
-                                    <Form.Control type="date" onChange={handleChange} value={userData.date} name='date' />
+                                    <Form.Control type="date" onChange={handleChanges}  name='date' />
                                 </Form.Group>
 
                                 <Button variant="success" className='w-100 btn-color my-4 py-3' type="submit">
